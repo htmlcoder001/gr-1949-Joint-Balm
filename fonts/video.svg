@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <filter id="h3hwbjzpsa" width="157.1%" height="133.3%" x="-28.6%" y="-16.7%" filterUnits="objectBoundingBox">
+            <feOffset dx="4" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feColorMatrix in="shadowOffsetOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0.819607843 0 0 0 0 0.721568627 0 0 0 1 0"/>
+            <feOffset dx="-4" dy="2" in="SourceAlpha" result="shadowOffsetOuter2"/>
+            <feColorMatrix in="shadowOffsetOuter2" result="shadowMatrixOuter2" values="0 0 0 0 0.917647059 0 0 0 0 0.898039216 0 0 0 0 0.133333333 0 0 0 1 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="shadowMatrixOuter2"/>
+            </feMerge>
+        </filter>
+        <path id="abus7cqpxb" d="M2 0L2 24 23 12z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <rect width="48" height="48" fill="#FFF" rx="24"/>
+            <g>
+                <path d="M0 0H24V24H0z" transform="translate(14 12)"/>
+                <g transform="translate(14 12)">
+                    <use fill="#000" filter="url(#h3hwbjzpsa)" xlink:href="#abus7cqpxb"/>
+                    <use fill="#1C1C1C" xlink:href="#abus7cqpxb"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
