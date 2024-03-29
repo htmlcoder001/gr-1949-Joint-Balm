@@ -4,14 +4,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+	
 	<link rel="stylesheet" href="css/style.css">
 
 	<script async type="text/javascript" src="js/choice.js"></script>
-
-
-
+	
 	<!-- PRELOAD FONTS -->
 	<link rel="preload" href="fonts/DarkmodeVF_W_WghtDrkm.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="fonts/Calluna-Regular-webfont.woff2" as="font" type="font/woff2" crossorigin>
@@ -925,7 +922,7 @@ font-weight: 500;    transition: all .3s ease;
 			</div>
 		</div>
 		<div class="ctContent">
-			<div class="oneImageWidget__wrapper oneImageWidget__wrapper--604783"><img class="oneImageWidget__img oneImageWidget__img--770263" style="max-width: 300px;" src="images/product.png" alt="image" draggable="false"></div>
+			<div class="oneImageWidget__wrapper oneImageWidget__wrapper--604783"><img class="oneImageWidget__img oneImageWidget__img--770263" style="max-width: 300px;" src="images/prod.webp" alt="image" draggable="false"></div>
 		</div>
 
 
@@ -1299,12 +1296,26 @@ font-weight: 500;    transition: all .3s ease;
 				</div>
 				
 				<style>
-					div.iti input[type="tel"] {
+					#form div.iti input[type="tel"] {
 						width: 100%;
 						border: none;
+						font-family: Arial, sans-serif;
 					}
-					div.iti {
+					div.iti,
+					#form input {
 						border: 1px solid #3578e563;
+						-webkit-border-radius: 0;
+						-moz-border-radius: 0;
+						-ms-border-radius: 0;
+						-o-border-radius: 0;
+						border-radius: 0;
+					}
+					.iti__selected-dial-code {
+						font-family: Arial, sans-serif!important;
+					}
+					#validation-message {
+						font-size: 16px;
+						padding: 6px 0;
 					}
 				</style>
 				
@@ -1327,6 +1338,7 @@ font-weight: 500;    transition: all .3s ease;
 						
 						<center><label class="inp_phone">Τηλέφωνο (ενεργό κινητό)</label></center>
 						<input name="phone" placeholder="" required="required" type="tel" id="phone" autocomplete="tel">
+						<div id="validation-message"></div>
 						
 						<input name="subid" type="hidden" value="{subid}">
 						<input name="px" type="hidden" value="{px}">
@@ -1760,45 +1772,8 @@ font-weight: 500;    transition: all .3s ease;
 
 
 	<script src="js/script.js"></script>
-	<!-- <script>
-		document.querySelectorAll("[scroll='goScrollToForm']").forEach((link) => {
-			link.addEventListener("click", function (e) {
-				e.preventDefault();
-				document.getElementById("goToForm").scrollIntoView({
-					behavior: 'smooth',
-					block: 'start'
-				});
-			});
-		});
-	</script> -->
 
-	<script>
-	</script>
-	<script src="js/form-validator.js"></script>
-
-
-
-
-
-
-	<!-- MEDIAMOND -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<!--<script src="js/form-validator.js"></script>-->
 
 
 	<footer class="footer">
@@ -1853,103 +1828,7 @@ font-weight: 500;    transition: all .3s ease;
 	</footer>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-	<div class="dialog-login dialog-login--hidden">
-
-
-		<form method="post" action="" class="form form-login form--md form--centered signed-out-visible js-yes-only">
-			<div class="form__title">Accedi</div>
-
-			<div class="form__row">
-				<input type="text" name="username_or_email" placeholder="Nome utente o email" title="Nome utente o email" maxlength="200" required>
-			</div>
-
-			<div class="form__row">
-				<input type="password" name="password" placeholder="Password" title="Password" maxlength="500" required>
-			</div>
-
-			<div class="form__actions">
-				<button type="submit" class="button">ACCEDI</button>
-			</div>
-			<div class="form__actions">
-				<a href="#form" class="button">REGISTRATI</a>
-			</div>
-			<div class="form__actions">
-				<a href="#form" class="link-forgot-password">HAI DIMENTICATO LA
-					PASSWORD?</a>
-			</div>
-		</form>
-
-		<noscript>
-			<div class="form form--md form--centered signed-out-visible">
-				<div class="form__title">Accedi</div>
-				<p class="typography">
-					Spiacenti, devi abilitare javascript per poter procedere.
-				</p>
-			</div>
-		</noscript>
-
-	</div>
-
-
-
-	<div class="main-loader noisy" data-delay="1500">
-		<div>
-			<img loading="lazy" src="fonts/logo-slim.svg" width="66" height="81" alt="ilGiornale.it Logo" class="bouncy">
-			<a href="#form" class="retry">Ricarica</a>
-		</div>
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- Webtrekk 3.2.8, (c) www.webtrekk.com -->
-
-
-	<!-- /Webtrekk -->
-
-
-
-	<!-- Begin comScore Tag -->
-
-
-	<!-- End comScore Tag -->
-
-
-
-	<!-- START Nielsen Static_Browser_SDK -->
-
-	<!-- END Nielsen Static_Browser_SDK -->
-
-
-
-
-
-
-
+	
 
 	<script src="js/header.v2.dev.min.js" onerror="document.body.classList.remove('opt-cls');"></script>
 
@@ -1963,6 +1842,51 @@ font-weight: 500;    transition: all .3s ease;
 				scrollTop: $('#goToForm').offset().top - 25
 			}, 400);
 		});
+	</script>
+	
+	<!-- PHONE INPUT -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@20.0.5/build/css/intlTelInput.css">
+	<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@20.0.5/build/js/intlTelInput.min.js"></script>
+	<script>
+		const input = document.querySelector("#phone");
+		const submitButton = document.querySelector("button[type='submit']");
+		const iti = window.intlTelInput(input, {
+			allowDropdown: false,
+			countrySearch: false,
+			geoIpLookup: function(callback) {
+				fetch("https://ipapi.co/json")
+					.then(function(res) { return res.json(); })
+					.then(function(data) { callback(data.country_code); })
+					.catch(function() { callback(); });
+			},
+			
+			
+			initialCountry: "gr",
+			placeholderNumberType: "MOBILE",
+			showFlags: true,
+			showSelectedDialCode: true,
+			utilsScript: "./js/utils.js",
+		});
+		
+		input.addEventListener('input', function() {
+			const validationMessage = document.querySelector("#validation-message");
+			
+			if (iti.isValidNumber()) {
+				if (validationMessage) {
+					validationMessage.textContent = "Έγκυρος αριθμός τηλεφώνου";
+				} else {
+					validationMessage.textContent = "Έγκυρος αριθμός τηλεφώνου";
+				}
+				submitButton.removeAttribute('disabled');
+			} else {
+				if (validationMessage) {
+					validationMessage.textContent = "Μη έγκυρος αριθμός τηλεφώνου";
+				} else {
+					validationMessage.textContent = "Μη έγκυρος αριθμός τηλεφώνου";
+				}
+				submitButton.setAttribute('disabled', 'disabled');
+			}
+		})
 	</script>
 
 </body>
